@@ -50,6 +50,20 @@ namespace AppDeEventos.Controllers
             return administrador;
         }
 
+        [HttpGet("GetAdministradorSenhaEmail")]
+        public async Task<ActionResult<Administrador>> GetAdministradorByEmailAndPassword(string email, string senha)
+        {
+            var administrador = await _context.Administradores
+                .FirstOrDefaultAsync(a => a.Email == email && a.Senha == senha);
+
+            if (administrador == null)
+            {
+                return NotFound();
+            }
+
+            return administrador;
+        }
+
         // PUT: api/Administradores/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
