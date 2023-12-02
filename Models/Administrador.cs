@@ -6,6 +6,6 @@ namespace AppDeEventos.Models
     {
         [Key]
         public int IdAdministrador { get; set; }
-        public Boolean Organizador { get; set; } = false;
+        public Boolean Organizador { get; set; }
     }
 }
