@@ -117,7 +117,8 @@ namespace AppDeEventos.Controllers
             {
                 Nome = model.Nome,
                 Email = model.Email,
-                Senha = model.Senha
+                Senha = model.Senha,
+                Organizador = model.Organizador
             };
 
             _context.Administradores.Add(administrador);
